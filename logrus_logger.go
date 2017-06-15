@@ -18,7 +18,7 @@
 
 package bark
 
-import "github.com/Sirupsen/logrus"
+import "github.com/sirupsen/logrus"
 
 // Interface provides indirection so Entry and Logger implementations can use exact same methods
 type logrusLoggerOrEntry interface {
@@ -54,7 +54,7 @@ func (l barkLogrusLogger) WithField(key string, value interface{}) Logger {
 }
 
 func (l barkLogrusLogger) WithFields(logFields LogFields) Logger {
-	if (logFields == nil) {
+	if logFields == nil {
 		return l
 	}
 
